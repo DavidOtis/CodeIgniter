@@ -143,7 +143,7 @@ class CI_Config {
 						return FALSE;
 					}
 
-					show_error('Your '.$file_path.' file does not appear to contain a valid configuration array.');
+					throw new RuntimeException('CI Error: '.'Your '.$file_path.' file does not appear to contain a valid configuration array.');
 				}
 
 				if ($use_sections === TRUE)
@@ -173,7 +173,7 @@ class CI_Config {
 			return FALSE;
 		}
 
-		show_error('The configuration file '.$file.'.php does not exist.');
+		throw new RuntimeException('CI Error: '.'The configuration file '.$file.'.php does not exist.');
 	}
 
 	// --------------------------------------------------------------------
